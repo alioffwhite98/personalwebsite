@@ -1,0 +1,485 @@
+/* Starter CSS */
+
+* {
+  box-sizing: border-box;
+  /* because it’s 2019, jen simmons */
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #F0F0F0;
+  background-color: rgba(147, 191, 187, 0.9);
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+
+.hero {
+  background: url("https://images.unsplash.com/photo-1574112594173-37dd4913fc26?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2808&q=80") center;
+  background-size: cover;
+  padding: 4rem 2rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100vh;
+}
+
+.inner-hero {
+  background: rgba(0, 52, 52, 0.9);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.inner-hero>h1 {
+  color: #735241;
+  font-family: 'Prompt', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.subhead {
+  color: rgba(242, 236, 228, 0.986);
+  font-family: 'Merriweather', serif;
+  font-size: 1.2rem;
+  font-weight: 200;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  letter-spacing: 2px;
+  padding-bottom: 3em;
+}
+
+.welcome-button {
+  color: rgba(2, 81, 89, 0.9);
+  padding: 10px;
+  background-color: rgba(242, 236, 228, 0.986);
+  text-decoration: none;
+  margin-top: 4em;
+  border-radius: 0.5rem;
+}
+
+.welcome-button:hover {
+  color: rgba(242, 236, 228, 0.986);
+  background-color: rgba(147, 191, 187, 0.9);
+}
+
+/* navigation */
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(2, 81, 89, 0.9);
+}
+
+.main-nav {
+  font-family: 'Prompt', sans-serif;
+  letter-spacing: 2px;
+  list-style: none;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+}
+
+.main-nav a {
+  display: block;
+  padding: 1em;
+  color: rgba(242, 236, 228, 0.986);
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main-nav a:hover {
+  background: rgba(242, 236, 228, 0.986);
+  color: #025159;
+}
+
+.main-nav li:last-of-type a {
+  border-bottom: none;
+  margin-bottom: 3px;
+}
+
+
+@media only screen and (min-width: 35em) {
+
+
+  .logo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .main-nav {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .main-nav a {
+    text-align: center;
+    padding: 10px;
+    border-top: none;
+    border-bottom: none;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 60em) {
+
+  .flex-container {
+    flex-direction: row;
+  }
+
+  .main-nav {
+    justify-content: flex-end;
+  }
+
+  .main-nav a {
+    padding: 10px 25px;
+  }
+}
+
+/* end of navbar */
+
+/* grids */
+.inner-hero {
+  grid-column: 2;
+}
+
+@media (min-width: 600px) {
+  .inner-hero {
+    grid-column: 3;
+  }
+}
+
+@media (min-width: 1000px) {
+  .inner-hero {
+    grid-column: 1;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  /* makes image responsive if needed but makes sure it doesn't stretch */
+}
+
+/* make the Section class cards here.  */
+
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(242, 236, 228, 0.986);
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  max-width: 350px;
+  border-radius: 0.5rem;
+  border: 1px solid gray;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.card:hover {
+  transition: all 0.4s ease-in;
+  top: -5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cardphoto {
+  max-height: 225px;
+  overflow: hidden;
+}
+
+.cardarticle {
+  font-family: 'Merriweather', serif;
+  background-color: rgba(242, 236, 228, 0.986);
+  padding: 2.5rem;
+  flex-grow: 1;
+}
+
+/* typography */
+.cardH1 {
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.4rem;
+  margin: 0;
+  padding-bottom: 1em;
+  color: #735241;
+}
+
+.cardfooter {
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #025159;
+  text-transform: lowercase;
+  margin: auto;
+}
+
+.cardfooter a {
+  color: #025159;
+}
+
+.cardfooter:hover a {
+  color: #93BFBB;
+}
+
+.linkedcard {
+  color: black;
+}
+
+/* this will keep the images from over stretching */
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* simple gallery */
+
+.photo-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
+}
+
+@media screen and (min-width: 600px) {
+  .item-tall {
+    grid-row: span 2 / auto;
+  }
+
+  .item-wide {
+    grid-column: span 2 / auto;
+  }
+}
+
+/* Medium screens */
+
+/* .photo-grid {
+    grid-auto-flow: dense;
+  } */
+
+article {
+  background: white;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+article>p {
+  line-height: 1.3;
+}
+
+.columns {
+  display: grid;
+  grid-gap: 1em;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+/* because it’s 2019, jensimmons */
+* {
+  box-sizing: border-box;
+}
+
+/* border-box box model allows us to add padding and border to our elements without increasing their size */
+
+body {
+  /* background: #f0f0f0; */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  /* display: block; */
+  max-width: 100%;
+}
+
+.headerbox {
+  height: 100vh;
+  position: relative;
+  background-image: url(https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2852&q=80);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.title {
+  height: 280px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -150px;
+}
+
+.title h1 {
+  font-family: 'Prompt', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #735241;
+  font-size: 10vw;
+}
+
+/* .transparent {
+  height: 10em;
+  width: 100%;
+  position: ;
+  top: 75%;
+  margin-top: 5em;
+} */
+
+/* .transparent h2 {
+  font-size: 12vw;
+  text-align: end;
+  padding-right: 30px;
+  color: maroon;
+} */
+
+.content {
+  margin: 0 auto;
+  max-width: 90ch;
+  height: fit-content;
+  padding: 1.7rem;
+  background-color: rgba(2, 81, 89, 0.7);
+}
+
+.content article {
+  padding-top: 15px;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+  background-color: rgba(2, 81, 89, 0);
+  color: rgba(242, 236, 228, 0.986)
+}
+
+.content h1{
+  font-family: 'Prompt', sans-serif;
+  font-weight: 500;
+  font-size: 2.5em;
+  color: #735241;
+  padding-bottom: .5em;
+}
+
+.content p{
+  font-family: 'Merriweather', serif;
+  line-height: 1.7em;
+  padding: 15px;
+}
+
+
+.first-image {
+  position: relative;
+  height: 600px;
+  background-image: url(https://consequenceofsound.net/wp-content/uploads/2020/01/Halsey-Manic.jpg?quality=80);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.second-image {
+  position: relative;
+  height: 600px;
+  background-image: url(https://vignette.wikia.nocookie.net/paramore/images/4/4f/After_Laughter.jpg/revision/latest?cb=20170429003732);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.third-image {
+  position: relative;
+  height: 600px;
+  background-image: url(https://media.pitchfork.com/photos/5ebae46bcaddbe3e3b13a653/master/pass/kehlaniinline.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+/* media queries */
+
+/* @media (min-width: 800px) {
+  .columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .image.one {}
+
+  .text.one {}
+
+  .image.two {}
+
+  .text.two {}
+
+  .image.three {}
+
+  .text.three {}
+}
+
+@media (min-width: 1200px) {
+  .columns {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .image.one {}
+
+  .text.one {}
+
+  .image.two {}
+
+  .text.two {}
+
+  .image.three {}
+
+  .text.three {}
+} */
